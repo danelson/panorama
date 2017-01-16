@@ -14,6 +14,8 @@ def homogeneous(xyw_in):
             xywOut[i, :] = xyw_in[i, :] / xyw_in[2, :]
     elif xyw_in.shape[0] == 2:
         xywOut = numpy.vstack((xyw_in, numpy.ones((1, xyw_in.shape[1]), dtype=xyw_in.dtype)))
+    else:
+        raise ValueError("xyw_in is not 2xN or 3xN")
 
     return xywOut
 
